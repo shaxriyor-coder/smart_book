@@ -53,7 +53,7 @@ class BookSerializer(serializers.ModelSerializer):
         model = Book
         fields = ['id', 'title', 'description', 'image', 'genres', 'available', 'muallif']
 
-class BookCreateSerializer(serializers.ModelSerializer): #bu kitob yaratish uchun
+class BookCreateSerializer(serializers.ModelSerializer):
     genres = serializers.PrimaryKeyRelatedField(queryset=Janr.objects.all(), many=True)
 
     class Meta:
