@@ -152,7 +152,7 @@ class KitobIjaraOlishView(generics.CreateAPIView):
         if not Book.objects.filter(id=book_id).exists():
             return Response({"xato": "Bunday kitob mavjud emas."}, status=status.HTTP_404_NOT_FOUND)
 
-        # Kitob ijarada emasligini tekshirish
+     
         is_rented = Ijaradagi_kitob_infosi.objects.filter(
             book_id=book_id, is_finished=False
         ).exists()
